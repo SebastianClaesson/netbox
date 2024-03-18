@@ -10,7 +10,8 @@ If disabled, the values of API tokens will not be displayed after each token's i
 
 ## ALLOWED_URL_SCHEMES
 
-!!! tip "Dynamic Configuration Parameter"
+> [!TIP]
+> Dynamic Configuration Parameter
 
 Default: `('file', 'ftp', 'ftps', 'http', 'https', 'irc', 'mailto', 'sftp', 'ssh', 'tel', 'telnet', 'tftp', 'vnc', 'xmpp')`
 
@@ -92,7 +93,8 @@ CSRF_TRUSTED_ORIGINS = (
 
 ## DEFAULT_PERMISSIONS
 
-!!! info "This parameter was introduced in NetBox v3.6."
+> [!NOTE]  
+> This parameter was introduced in NetBox v3.6.
 
 Default:
 
@@ -117,8 +119,8 @@ DEFAULT_PERMISSIONS = {
 }
 ```
 
-!!! warning
-    Setting a custom value for this parameter will overwrite the default permission mapping shown above. If you want to retain the default mapping, be sure to reproduce it in your custom configuration.
+> [!WARNING]  
+> Setting a custom value for this parameter will overwrite the default permission mapping shown above. If you want to retain the default mapping, be sure to reproduce it in your custom configuration.
 
 ---
 
@@ -139,13 +141,14 @@ EXEMPT_VIEW_PERMISSIONS = [
 ```
 
 To exempt _all_ models from view permission enforcement, set the following. (Note that `EXEMPT_VIEW_PERMISSIONS` must be an iterable.)
+> [!TIP]
+> All default apps and models can be found at https://github.com/netbox-community/netbox/tree/develop/docs/models.
 
 ```python
 EXEMPT_VIEW_PERMISSIONS = ['*']
 ```
-
-!!! note
-    Using a wildcard will not affect certain potentially sensitive models, such as user permissions. If there is a need to exempt these models, they must be specified individually.
+> [!NOTE]  
+> Using a wildcard will not affect certain potentially sensitive models, such as user permissions. If there is a need to exempt these models, they must be specified individually.
 
 ---
 
@@ -189,8 +192,8 @@ Default: False
 
 If true, all non-HTTPS requests will be automatically redirected to use HTTPS.
 
-!!! warning
-    Ensure that your frontend HTTP daemon has been configured to forward the HTTP scheme correctly before enabling this option. An incorrectly configured frontend may result in a looping redirect.
+> [!WARNING]  
+> Ensure that your frontend HTTP daemon has been configured to forward the HTTP scheme correctly before enabling this option. An incorrectly configured frontend may result in a looping redirect.
 
 ---
 
